@@ -36,6 +36,23 @@ class MissingTenantContextError(RuntimeError):
     """Raised when tenant-scoped data access is attempted without an organization."""
 
 
+def clear_request_connection() -> Token[tuple[int, Any] | None]:
+    """Detach the bound request-transaction connection from this context.
+
+    Async work that outlives the request handler (SSE generators, spawned
+    tasks) inherits the bound connection through contextvars. The middleware
+    releases and rolls back that connection when call_next returns, so any
+    task still holding it crashes with "another operation is in progress"
+    and its writes are discarded. Stream bodies must call this before doing
+    database work so their queries use normal scoped connections instead.
+    """
+    return _request_connection.set(None)
+
+
+def reset_request_connection(token: Token[tuple[int, Any] | None]) -> None:
+    _request_connection.reset(token)
+
+
 def set_request_organization(organization_id: str) -> Token[str | None]:
     normalized = str(uuid.UUID(str(organization_id)))
     return _request_organization.set(normalized)

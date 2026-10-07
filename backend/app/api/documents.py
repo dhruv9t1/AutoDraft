@@ -14,7 +14,7 @@ from ..variable_quality import audit_variables
 from ..services.field_service import identification_complete_payload
 from ..services.organization_service import get_boilerplate_values
 from ..extraction.docx_reader import inspect_docx_bytes
-from ..db import reset_request_organization, set_request_organization
+from ..db import clear_request_connection, reset_request_connection, reset_request_organization, set_request_organization
 from ..repositories.ai_governance import AIGovernanceRepository
 from ..auth import require_role
 
@@ -104,6 +104,11 @@ async def identify_variables_stream(req:VariableIdentificationRequest, request: 
             await queue.put(None)
 
     async def gen():
+        # Stream bodies run after the middleware releases the bound request
+        # transaction and resets the tenant context; detach from the released
+        # connection and re-establish the tenant scope for stream-time queries.
+        conn_token=clear_request_connection()
+        tenant_token=set_request_organization(request.state.security.organization_id)
         worker=asyncio.create_task(producer())
         yield sse("status", {"state":"started","message":"Variable identification started"})
         try:
@@ -135,6 +140,8 @@ async def identify_variables_stream(req:VariableIdentificationRequest, request: 
             if not worker.done():
                 worker.cancel()
             await asyncio.gather(worker, return_exceptions=True)
+            reset_request_organization(tenant_token)
+            reset_request_connection(conn_token)
 
     return StreamingResponse(gen(),media_type="text/event-stream",headers={"Cache-Control":"no-cache, no-transform","X-Accel-Buffering":"no"})
 

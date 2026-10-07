@@ -57,8 +57,8 @@ async def add_participant(matter_id:str,req:MatterParticipantCreateRequest):
     data=req.model_dump();data['role_key']=role;data['display_role']=req.display_role.strip()
     row=await repo.add_participant(uid(matter_id,'matter'),uid(req.contact_id,'contact'),data)
     if not row:raise HTTPException(404,"Matter or contact not found")
-    rows=await repo.participants(uid(matter_id,'matter'));match=next((x for x in rows if x['id']==row['id']),None)
-    return participant(match) if match else {"id":str(row['id'])}
+    rows=await repo.participants(uid(matter_id,'matter'));found=next((x for x in rows if x['id']==row['id']),None)
+    return participant(found) if found else {"id":str(row['id'])}
 
 @router.patch('/api/matters/{matter_id}/participants/{participant_id}',dependencies=[Depends(api_auth)])
 async def update_participant(matter_id:str,participant_id:str,req:MatterParticipantUpdateRequest):
@@ -67,8 +67,8 @@ async def update_participant(matter_id:str,participant_id:str,req:MatterParticip
     if data.get('display_role') is not None:data['display_role']=data['display_role'].strip()
     row=await repo.update_participant(uid(matter_id,'matter'),uid(participant_id,'participant'),data)
     if not row:raise HTTPException(404,"Participant not found")
-    rows=await repo.participants(uid(matter_id,'matter'));match=next((x for x in rows if x['id']==row['id']),None)
-    return participant(match) if match else {"id":str(row['id'])}
+    rows=await repo.participants(uid(matter_id,'matter'));found=next((x for x in rows if x['id']==row['id']),None)
+    return participant(found) if found else {"id":str(row['id'])}
 
 @router.delete('/api/matters/{matter_id}/participants/{participant_id}',status_code=204,dependencies=[Depends(api_auth)])
 async def remove_participant(matter_id:str,participant_id:str):

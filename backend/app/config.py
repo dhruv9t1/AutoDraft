@@ -148,6 +148,13 @@ class Settings(BaseSettings):
     ollama_top_p: float = 1.0
     ollama_top_k: int = 1
     ollama_seed: int = 42
+    # A 32k-context KV cache can exceed RAM on small hosts and Ollama then
+    # answers every request with HTTP 500 ("llama-server process has
+    # terminated"). _call halves num_ctx on such crashes down to
+    # ollama_num_ctx_min; lower ollama_num_ctx upfront on constrained hosts.
+    ollama_num_ctx: int = 32768
+    ollama_num_ctx_min: int = 4096
+    ollama_num_predict: int = 8192
 
     # Optional lawyer-firm-style System-1 candidate decider. This is deliberately
     # non-critical: if Jev is disabled or unavailable, ambiguous candidates flow
