@@ -1,0 +1,100 @@
+{
+  "promptVersion": "v3",
+  "backendUrl": "http://localhost:3001",
+  "timestamp": "2026-08-07T08:10:48.398Z",
+  "summary": {
+    "verbatim": 10,
+    "noOverlap": 10,
+    "noListMarkers": 0,
+    "noDuplicates": 10,
+    "recall": 2.7777777777777777,
+    "naming": null
+  },
+  "results": [
+    {
+      "fixture": "sample-cheque-bounce",
+      "returned": [
+        {
+          "id": "var_1",
+          "name": "Reference Number",
+          "originalText": "Ref. No. 411/2026",
+          "position": 0,
+          "confidenceScore": null,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Cheque Number",
+          "originalText": "507301",
+          "position": 183,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "GSTIN",
+          "originalText": "36DQSPK7529R1ZN",
+          "position": 241,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Cheque Number 2",
+          "originalText": "Cheque No. 000129",
+          "position": 262,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Cheque Date",
+          "originalText": "30/03/2026",
+          "position": 286,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Section / Act Reference",
+          "originalText": "Section 138 of The Negotiable Instruments Act, 1881",
+          "position": 432,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "PIN Code 2",
+          "originalText": "380001",
+          "position": 598,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "GSTIN 2",
+          "originalText": "24AECFS7256N1Z4",
+          "position": 623,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Date 2",
+          "originalText": "06/02/2026",
+          "position": 671,
+          "confidenceScore": 1,
+          "currentValue": null
+        }
+      ],
+      "code": {
+        "verbatim": 10,
+        "noOverlap": 10,
+        "noListMarkers": 0,
+        "noDuplicates": 10,
+        "recall": 2.7777777777777777
+      },
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "fields": [
+    {
+      "semanticKey": "invoice.number",
+      "sourceText": "192",
+      "replaceable": true
+    },
+    {
+      "semanticKey": "delivery_challan.number",
+      "sourceText": "192",
+      "replaceable": true
+    }
+  ],
+  "mustNotDetect": [],
+  "metric": false
+}

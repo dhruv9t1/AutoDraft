@@ -1,0 +1,3 @@
+# Frontend logging privacy hardening — 2026-10-06
+
+Issue 55 is closed at code level. The Word add-in diagnostic logger is production-disabled and requires explicit loopback development opt-in. Network forwarding has no default URL and can only target loopback. Arbitrary objects/error messages/stacks are not serialized. High-risk document/value diagnostics were removed at their call sites, direct application `console.*` calls are prohibited by the release audit, and the optional logger receiver is loopback-only, origin-restricted, size-limited, non-persistent, and disabled unless explicitly enabled.

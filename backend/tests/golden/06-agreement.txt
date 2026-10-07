@@ -1,0 +1,4 @@
+AGREEMENT
+Invoice No.: INV-2048
+Email: accounts@example.com
+Terms remain subject to written acceptance.

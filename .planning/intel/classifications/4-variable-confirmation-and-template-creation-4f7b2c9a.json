@@ -1,0 +1,32 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/stories/4-variable-confirmation-and-template-creation.md",
+  "type": "SPEC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Story 1.4: Variable Confirmation and Template Creation",
+  "summary": "User story specifying variable confirmation checkbox, Create Template button behavior, transactional template save API, and navigation to Journey 1.2.",
+  "scope": [
+    "variable confirmation checkbox",
+    "Create Template button",
+    "template save API",
+    "database transaction atomicity",
+    "TemplateCreationForm component",
+    "backend handlers",
+    "database migrations",
+    "Journey 1.2 navigation"
+  ],
+  "cross_refs": [
+    "docs/Journey_1.1_Create_New_Template_PRD.md#FR007",
+    "docs/Journey_1.1_Create_New_Template_PRD.md#FR008",
+    "docs/business-docs/01-project-overview.mdc#Journey-1.1",
+    "backend/migrations/20250127000001_create_variables_table.sql",
+    "backend/src/handlers.rs",
+    "backend/src/models.rs",
+    "word-extension/src/taskpane/components/TemplateCreationForm.tsx",
+    "word-extension/src/services/",
+    "backend/migrations/"
+  ],
+  "locked": false,
+  "precedence": null,
+  "notes": "Manifest declared SPEC; document is a user story with acceptance criteria (PRD-like) plus implementation tasks and source-tree contracts (SPEC-like). Manifest type honored as authoritative."
+}

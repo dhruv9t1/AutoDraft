@@ -1,0 +1,19 @@
+{
+  "metric": true,
+  "fields": [
+    {
+      "semanticKey": "hsn",
+      "sourceText": "998311",
+      "replaceable": true
+    },
+    {
+      "semanticKey": "eway.number",
+      "sourceText": "123456789012",
+      "replaceable": true
+    }
+  ],
+  "mustNotDetect": [
+    "TABLE CELL A",
+    "TABLE CELL B"
+  ]
+}

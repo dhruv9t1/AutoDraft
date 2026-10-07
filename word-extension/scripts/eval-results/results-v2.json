@@ -1,0 +1,29 @@
+{
+  "promptVersion": "v2",
+  "backendUrl": "http://localhost:8080",
+  "timestamp": "2026-05-02T18:23:47.819Z",
+  "summary": {
+    "verbatim": 10,
+    "noOverlap": 10,
+    "noListMarkers": 10,
+    "noDuplicates": 10,
+    "recall": 0,
+    "naming": 0
+  },
+  "results": [
+    {
+      "fixture": "sample-cheque-bounce",
+      "returned": [],
+      "code": {
+        "verbatim": 10,
+        "noOverlap": 10,
+        "noListMarkers": 10,
+        "noDuplicates": 10,
+        "recall": 0
+      },
+      "errors": [
+        "backend call failed: fetch failed"
+      ]
+    }
+  ]
+}

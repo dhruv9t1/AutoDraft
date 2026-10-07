@@ -1,0 +1,25 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/LLM_TRAINING_PLAN.md",
+  "type": "SPEC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "LLM Training Plan: Legal Document Variable Extractor",
+  "summary": "Technical plan to fine-tune a 3B Qwen model via QLoRA for legal document variable extraction, deploy via Ollama, and iterate using keyword tracking.",
+  "scope": [
+    "LLM fine-tuning pipeline",
+    "QLoRA training",
+    "Qwen 2.5-3B-Instruct base model",
+    "GGUF conversion",
+    "Ollama deployment",
+    "Keyword tracking and ranking",
+    "Data collection and preparation",
+    "Evaluation metrics (precision/recall/F1)",
+    "RunPod cloud training infrastructure",
+    "Rust backend integration",
+    "Variable extraction taxonomy"
+  ],
+  "cross_refs": [],
+  "locked": false,
+  "precedence": null,
+  "notes": "Manifest-declared SPEC. Document is a multi-phase technical plan with hyperparameter tables, model selection criteria, deployment Modelfile, env config contracts, and evaluation metrics — consistent with SPEC classification."
+}

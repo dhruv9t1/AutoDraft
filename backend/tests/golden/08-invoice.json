@@ -1,0 +1,23 @@
+{
+  "metric": true,
+  "fields": [
+    {
+      "semanticKey": "invoice.number",
+      "sourceText": "8891",
+      "replaceable": true
+    },
+    {
+      "semanticKey": "gstin",
+      "sourceText": "24ABCDE1234F1Z5",
+      "replaceable": true
+    },
+    {
+      "semanticKey": "amount",
+      "sourceText": "30,000",
+      "replaceable": true
+    }
+  ],
+  "mustNotDetect": [
+    "TAX INVOICE"
+  ]
+}

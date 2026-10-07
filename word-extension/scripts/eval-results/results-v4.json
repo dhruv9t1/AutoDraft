@@ -1,0 +1,196 @@
+{
+  "promptVersion": "v4",
+  "backendUrl": "http://localhost:3001",
+  "timestamp": "2026-08-07T08:37:21.775Z",
+  "summary": {
+    "verbatim": 10,
+    "noOverlap": 0,
+    "noListMarkers": 0,
+    "noDuplicates": 10,
+    "recall": 8.333333333333334,
+    "naming": null
+  },
+  "results": [
+    {
+      "fixture": "sample-cheque-bounce",
+      "returned": [
+        {
+          "id": "var_1",
+          "name": "Reference Number",
+          "originalText": "411/2026",
+          "position": 9,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": "var_2",
+          "name": "Notice Date",
+          "originalText": "12/APR/2026",
+          "position": 25,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": "var_3",
+          "name": "Accused Name",
+          "originalText": "Mr. SOMISETTI VENKATA TIRUMALA KONDAIAH",
+          "position": 42,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": "var_4",
+          "name": "Accused Firm Name",
+          "originalText": "JAI SRI LAKSHMI COLLECTION",
+          "position": 98,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": "var_5",
+          "name": "Accused Address",
+          "originalText": "8-1165, BCM ROAD, ASWARAOPET, DISTRICT : KHAMMAM, PIN : 507301",
+          "position": 127,
+          "confidenceScore": 0.9,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Cheque Number",
+          "originalText": "507301",
+          "position": 183,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "GSTIN",
+          "originalText": "36DQSPK7529R1ZN",
+          "position": 241,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Cheque Number 2",
+          "originalText": "Cheque No. 000129",
+          "position": 262,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": "var_8",
+          "name": "Cheque Number 2",
+          "originalText": "000129",
+          "position": 273,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Cheque Date",
+          "originalText": "30/03/2026",
+          "position": 286,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": "var_10",
+          "name": "Cheque Amount",
+          "originalText": "1,73,004=00",
+          "position": 305,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": "var_11",
+          "name": "Cheque Bank Name",
+          "originalText": "CITY UNION BANK LTD",
+          "position": 326,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": "var_12",
+          "name": "Cheque Bank Branch",
+          "originalText": "AMALAPURAM",
+          "position": 347,
+          "confidenceScore": 0.9,
+          "currentValue": null
+        },
+        {
+          "id": "var_13",
+          "name": "Cheque Endorsement Status",
+          "originalText": "FUNDS INSUFFICIENT",
+          "position": 397,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Section / Act Reference",
+          "originalText": "Section 138 of The Negotiable Instruments Act, 1881",
+          "position": 432,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": "var_15",
+          "name": "Complainant Name",
+          "originalText": "M/s. SWAKAR EXPORTS",
+          "position": 492,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": "var_16",
+          "name": "Complainant Address",
+          "originalText": "# 2, G. Floor, VaibhavLaxmi Complex, Opp. Old Prakash Cinema, GheeKanta, AHMEDABAD : 380001",
+          "position": 513,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "PIN Code 2",
+          "originalText": "380001",
+          "position": 598,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "GSTIN 2",
+          "originalText": "24AECFS7256N1Z4",
+          "position": 623,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": "var_18",
+          "name": "Place of Signing",
+          "originalText": "Ahmedabad",
+          "position": 649,
+          "confidenceScore": 0.95,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Date 2",
+          "originalText": "06/02/2026",
+          "position": 671,
+          "confidenceScore": 1,
+          "currentValue": null
+        }
+      ],
+      "code": {
+        "verbatim": 10,
+        "noOverlap": 0,
+        "noListMarkers": 0,
+        "noDuplicates": 10,
+        "recall": 8.333333333333334
+      },
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/business-docs/01-project-overview.mdc",
+  "type": "DOC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Project Overview",
+  "summary": "Overview of a Word add-in for lawyers that manages legal document templates, AI-driven variable detection, and form-based template filling workflows.",
+  "scope": [
+    "legal document templates",
+    "Word Office Add-in",
+    "template variables",
+    "AI variable identification",
+    "template creation journey",
+    "template filling form"
+  ],
+  "cross_refs": [
+    "docs/business-docs/MSWord-screenshot.png"
+  ],
+  "locked": false,
+  "precedence": null,
+  "notes": ""
+}

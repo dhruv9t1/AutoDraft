@@ -1,0 +1,22 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/business-docs/journey-1-q&a.md",
+  "type": "DOC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Journey 1 Q&A",
+  "summary": "Business Q&A clarifying scope, UI defaults, edge cases, and success criteria for Journey 1.1 template creation in the Word Add-in.",
+  "scope": [
+    "Journey 1.1",
+    "template creation",
+    "Auto Detect Variables",
+    "Office Add-in panel",
+    "AI variable detection",
+    "user roles",
+    "edge cases",
+    "business context"
+  ],
+  "cross_refs": [],
+  "locked": false,
+  "precedence": null,
+  "notes": ""
+}

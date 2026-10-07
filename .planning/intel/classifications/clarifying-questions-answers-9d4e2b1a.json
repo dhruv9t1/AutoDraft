@@ -1,0 +1,22 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/clarifying_questions_answers.md",
+  "type": "DOC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Clarifying Questions Answers - Journey 1.1",
+  "summary": "Q&A document capturing stakeholder answers to clarifying questions for the Journey 1.1 template creation feature.",
+  "scope": [
+    "Journey 1.1",
+    "template creation",
+    "Office Add-in",
+    "Auto Detect Variables",
+    "AI variable detection",
+    "user roles",
+    "edge cases",
+    "business context"
+  ],
+  "cross_refs": [],
+  "locked": false,
+  "precedence": null,
+  "notes": ""
+}

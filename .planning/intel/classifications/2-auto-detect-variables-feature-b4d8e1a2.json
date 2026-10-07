@@ -1,0 +1,33 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/stories/2-auto-detect-variables-feature.md",
+  "type": "SPEC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Story 1.2: Auto Detect Variables Feature",
+  "summary": "User story and implementation tasks for an AI-driven Auto Detect Variables button that extracts template variables from a Word document.",
+  "scope": [
+    "Auto Detect Variables button",
+    "AI LLM variable detection",
+    "Document content extraction",
+    "Loading indicator",
+    "Variable detection validation (80% threshold)",
+    "Variable list display",
+    "Error handling and manual fallback",
+    "TemplateCreationForm component",
+    "ollama.rs backend AI service",
+    "aiVariableService frontend"
+  ],
+  "cross_refs": [
+    "backend/src/ollama.rs",
+    "word-extension/src/services/documentExtraction.ts",
+    "word-extension/src/services/aiVariableService.ts",
+    "word-extension/src/taskpane/components/TemplateCreationForm.tsx",
+    "backend/src/handlers.rs",
+    "docs/Journey_1.1_Create_New_Template_PRD.md#FR003",
+    "docs/Journey_1.1_Create_New_Template_PRD.md#FR004",
+    "docs/Journey_1.1_Create_New_Template_PRD.md#FR005"
+  ],
+  "locked": false,
+  "precedence": null,
+  "notes": "Manifest declared SPEC; document is structurally a user story with acceptance criteria (PRD-like signals) but classification follows manifest authority."
+}

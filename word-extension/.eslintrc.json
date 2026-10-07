@@ -1,0 +1,33 @@
+{
+  "plugins": [
+    "office-addins",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "plugin:office-addins/react"
+  ],
+  "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "no-undef": "off"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "Word": "readonly",
+    "Office": "readonly",
+    "performance": "readonly",
+    "fetch": "readonly",
+    "TextDecoder": "readonly",
+    "ReadableStream": "readonly",
+    "globalThis": "readonly"
+  }
+}

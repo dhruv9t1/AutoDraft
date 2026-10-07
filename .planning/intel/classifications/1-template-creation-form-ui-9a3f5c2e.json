@@ -1,0 +1,31 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/stories/1-template-creation-form-ui.md",
+  "type": "SPEC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Story 1.1: Template Creation Form UI",
+  "summary": "Implementation story specifying the single-screen template creation form UI in the Office Add-in panel, including fields, validation, and integration tasks.",
+  "scope": [
+    "TemplateCreationForm component",
+    "Office Add-in panel",
+    "template name input",
+    "template type dropdown",
+    "template subtype dropdown",
+    "description text area",
+    "form validation",
+    "App.tsx navigation integration",
+    "TemplateMetadata type"
+  ],
+  "cross_refs": [
+    "docs/Journey_1.1_Create_New_Template_PRD.md#FR001",
+    "docs/Journey_1.1_Create_New_Template_PRD.md#FR002",
+    "docs/business-docs/MSWord-screenshot.png",
+    "word-extension/src/taskpane/components/App.tsx",
+    "word-extension/src/services/types.ts",
+    "word-extension/src/taskpane/components/TemplateCreationForm.tsx",
+    "word-extension/src/taskpane/components/"
+  ],
+  "locked": false,
+  "precedence": null,
+  "notes": ""
+}

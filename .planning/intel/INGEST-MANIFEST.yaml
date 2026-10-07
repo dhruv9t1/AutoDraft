@@ -1,0 +1,29 @@
+docs:
+  - path: docs/business-docs/01-project-overview.mdc
+    type: DOC
+  - path: docs/business-docs/Scope, behavior & goal.md
+    type: PRD
+  - path: docs/business-docs/journey-1-q&a.md
+    type: DOC
+  - path: docs/Journey_1.1_Create_New_Template_PRD.md
+    type: PRD
+  - path: docs/clarifying_questions_answers.md
+    type: DOC
+  - path: docs/DETERMINISM_AND_ACCURACY_TRACK.md
+    type: SPEC
+  - path: docs/LLM_TRAINING_PLAN.md
+    type: SPEC
+  - path: docs/indian-laws-vector-db-plan.md
+    type: SPEC
+  - path: docs/stories/1-template-creation-form-ui.md
+    type: SPEC
+  - path: docs/stories/2-auto-detect-variables-feature.md
+    type: SPEC
+  - path: docs/stories/3-variable-processing-and-display.md
+    type: SPEC
+  - path: docs/stories/4-variable-confirmation-and-template-creation.md
+    type: SPEC
+  - path: docs/stories/5-choose-existing-template-navigation.md
+    type: SPEC
+  - path: docs/stories/6-template-auto-save.md
+    type: SPEC

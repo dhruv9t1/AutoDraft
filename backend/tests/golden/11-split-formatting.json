@@ -1,0 +1,18 @@
+{
+  "metric": true,
+  "fields": [
+    {
+      "semanticKey": "cheque.number",
+      "sourceText": "000052",
+      "replaceable": true
+    },
+    {
+      "semanticKey": "cheque.date",
+      "sourceText": "13/11/2025",
+      "replaceable": true
+    }
+  ],
+  "mustNotDetect": [
+    "This fixture represents text split across formatting runs in Word."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/DETERMINISM_AND_ACCURACY_TRACK.md",
+  "type": "SPEC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Determinism & Accuracy Track",
+  "summary": "Phased technical plan to make the LLM variable-identification pipeline deterministic and push recall toward 100% via extractors, critic loops, correction capture, and fine-tuning.",
+  "scope": [
+    "LLM variable identification pipeline",
+    "backend/src/ollama.rs",
+    "Ollama inference determinism",
+    "JSON schema constrained decoding",
+    "regex extractors (PIN, GSTIN, IFSC, mobile, email, date, cheque, section+act)",
+    "multi-pass critic loop",
+    "variable_corrections Postgres table",
+    "POST /api/corrections endpoint",
+    "Word add-in correction capture UX",
+    "Qwen 2.5-3B fine-tuning",
+    "continuous evaluation / CI eval gating"
+  ],
+  "cross_refs": [
+    "./LLM_TRAINING_PLAN.md",
+    "backend/src/ollama.rs",
+    "backend/src/config.rs",
+    "backend/.env",
+    "backend/tests/",
+    "backend/src/extractors/",
+    "backend/migrations/",
+    "backend/src/handlers.rs",
+    "backend/src/models.rs",
+    "word-extension/src/services/",
+    "scripts/export_training_data.py"
+  ],
+  "locked": false,
+  "precedence": null,
+  "notes": ""
+}

@@ -1,0 +1,69 @@
+# FE Variable-Highlight Logs — 2026-05-05
+
+Source: Word add-in console after Phase 1 backend deploy. Captured during creation of
+template "602-2023 Ratnam ShowRoom Vs. Tops Textiles ... ACMSC-38 Eng".
+
+Streaming pipeline: 4 chunks → 82 variables, 100% identification.
+
+## Variables that FAILED to find ANY occurrence in the doc (`Could not find any occurrences for variable "..."`)
+
+- Accused State Jurisdiction        — `Circle-D, Jodhpur II, AC / CTO Ward`
+- Police Station Name 1             — `SOJATI GATE Police Station`
+- Accused Location                  — `JODHPUR SOJATI GATE`
+- Accused Address 2                 — `Chand Shah Takiya Market, Behind Vimal Handloom, HARIJAN BASTI, Link Road, At Post : NAI SARAK, SOJATI GATE, City & District : JODHPUR`
+- Complainant Address               — `# 501 – 502 – 512, 5th Floor, Vrindavan Shopping Centre, Pankornaka, RatanPole, Kalupur, AHMEDABAD`
+- Accused Address 1                 — `No.: 180, PARSHWANATH NAGAR, At Post : BHADWASIYA, City & Tahesil District : JODHPUR`
+- Accused Bank Branch Location      — `NEAR NASRANI CINEMA, CHOPASANI ROAD, SARDARPURA, JODHPUR`
+- Court Name                        — `Special Court of Hon'ble ADDITIONAL CHIEF METROPOLITAN / JUDICIAL MAGISTRATE, AHMEDABAD CITY`
+- Cheque Bank Branch Address        — `UCO BANK; NEAR NASRANI CINEMA, CHOPASANI ROAD, SARDARPURA, JODHPUR, PIN: 342003 [RAJSTHAN]`
+- Complainant Bank Branch Address   — `UNION BANK OF INDIA, GANDHI ROAD, AHMEDABAD PIN : 380001 [GUJARAT] BRANCH`
+- Police Station                    — `KALUPUR POLICE STATION, AHMEDABAD`
+- Accused Proprietor Name           — `Mr. PRADHUMAN SHARMA @ PRAVEEN`
+- Accused Firm Name                 — `M/s. "TOPS TEXTILES''`
+- Signing Place                     — `Place : Ahmedabad`
+- Signing Date                      — `Date :29/06/2023` / `Date 29/06/2023` / `Date:29/06/2023`
+
+## Pattern observed
+
+Most misses are LONG, multi-segment strings with one or more of:
+
+1. **Word doc whitespace divergence:** the LLM-extracted text has single spaces where the
+   source document has line breaks, tabs, multi-space gaps, NBSPs, or table-cell boundaries.
+   Frontend search variants only try `as-is`, `no-space`, `spaced-letter`. None of them
+   normalise *internal* whitespace flexibly.
+2. **Casing divergence:** `KALUPUR POLICE STATION` (LLM, all-caps) vs `KALUPUR Police Station`
+   (doc, mixed-case) — earlier in the same log, the mixed-case form was found because that
+   was the LLM's exact extraction; the all-caps variant was never tried.
+3. **Punctuation rendering:** smart quotes (`"…''`), em-dash vs hyphen, trailing colons
+   pulled into the value (`Date :29/06/2023`).
+4. **Already-wrapped overlap:** `Section 138 of The Negotiable Instruments Act 1881` was
+   wrapped successfully; later `Section:138 of The Negotiable Instruments Act : 1881`
+   matched but its occurrence-0 was skipped (`already inside a content control`) because it
+   physically overlaps the earlier wrap.
+
+## Variables that succeeded
+
+Single-token / short-span values (`HARIJAN BASTI`, `JODHPUR`, `AHMEDABAD`, `TOPS TEXTILES`,
+`UCO BANK`, `RJ902`, deterministic-extractor outputs `08BLGPS7568P1ZX`,
+`bgrpadvocate@gmail.com`, `28/06/2023`, `UBIN0531294`) all wrapped.
+
+## Dedup observations (post-Phase-1)
+
+After the FE dedup change, exact-equal still fires:
+
+- `[Dedup] Dropping duplicate-by-originalText name="GSTIN" originalText="0 8 B L G P S 7 5 6 8 P 1 Z X"`
+- `[Dedup] Dropping duplicate-by-originalText name="Date" originalText="09/09/2022"` (×1)
+- `[Dedup] Dropping duplicate-by-originalText name="Date" originalText="10/09/2022"` (×1)
+- `[Dedup] Dropping duplicate-by-originalText name="Date" originalText="03/03/2023"` (×2)
+
+A separate spurious "PIN Code" → list-marker filter dropped 14 PIN codes that the new
+deterministic extractor emitted (`770001`, `342007`, `342001`, `123456`, `342003`, `380001`).
+The list-marker filter's heuristic likely tripped on bare-6-digit values it saw as section
+labels — needs a follow-up to exempt the PIN extractor's hits.
+
+## Final counts
+
+- Stream complete: 82 variables (100%)
+- Pipelined writes: 14 + 7 + 18 + 11 = 62 wrapped, 20 unwrapped (the 15 listed above + 5
+  others not surfaced as misses but still pending).
+- createTemplate: 51 variables persisted (post-dedup).

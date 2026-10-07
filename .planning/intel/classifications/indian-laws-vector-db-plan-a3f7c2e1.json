@@ -1,0 +1,24 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/indian-laws-vector-db-plan.md",
+  "type": "SPEC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Indian Laws Vector Database Development Plan",
+  "summary": "Phased technical plan for building a vector database of Indian laws with hybrid retrieval, embedding pipeline, and Word add-in integration.",
+  "scope": [
+    "vector database",
+    "Indian legal corpus",
+    "pgvector",
+    "embedding pipeline",
+    "hybrid search",
+    "legal document chunking",
+    "search API",
+    "Word add-in integration",
+    "data ingestion pipeline",
+    "PostgreSQL schema"
+  ],
+  "cross_refs": [],
+  "locked": false,
+  "precedence": null,
+  "notes": ""
+}

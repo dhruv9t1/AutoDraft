@@ -1,0 +1,37 @@
+.DS_Store
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Private keys / cloud credentials
+*.pem
+*.key
+*.key.pub
+*.p8
+*.p12
+*.pfx
+**/.oci/
+**/.aws/
+**/.azure/
+
+# Build output
+backend/target/
+word-extension/dist/
+word-extension/node_modules/
+
+# ShipIt state (session data, not source code)
+.shipit/
+
+# Python backend
+backend/.venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/tests/__pycache__/
+backend/.pytest_cache/
+backend/*.egg-info/
+*.pyc

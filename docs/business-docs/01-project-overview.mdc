@@ -1,0 +1,48 @@
+---
+alwaysApply: true
+---
+
+## Core concept:
+I want to create a product around lawyers, which has a set of master data holding templates and it can be filled based on template type.  
+ 
+Let's say I have a template to send a Legal Notice. There are some variables holding those and some are stored in memory. Help me in designing & developing whole level architecture and fabulious UI / UX that user actually likes it.
+
+## User UI:
+1. The whole screen will resemble MS Word doc screen, for reference `docs/business-docs/MSWord-screenshot.png`.
+2. There is "Office Addin React App" loaded on left side of the user doc.
+
+## User Actions:
+
+### Journey 1 (New template drafting):
+
+#### Journey 1.1:
+1. User can create a new template with label as "Create a new template", description like "Turn your current document into a standard template".
+2. Then user is able to Enter name of the template (text type), Select Template Type, Select template sub type, and add a note or description.
+3. There is a CTA provided "Auto Detect Variables" to identify variables from the doc, on click we will call AI LLM.
+4. We will pass content to AI and see if AI is able to process the document and able to identify alteast 80% variables.
+5. We will provide Information about the variable identification. These many variables are identified.
+6. Then we will process the template having variable's with name. [variable name]
+7. Below the CTA we will ask user to confirm variable detection and custom added variables are correct. Checkbox with text as "I confirm the detected and custom added variables".
+8. Below that we have two CTA's side by side, "Create Template" & "Choose Existing Template".
+9. If he clicks on "Create Template", we will save variables against the template name in Database. See "Journey 1.2" for further catch up.
+10. If user selects "Choose Existing Template" then go to "Journey 1.3".
+
+#### Journey 1.2:
+1. User first selects "Template type" from a searchable select bar.
+2. There is a CTA provided to identify variables from the doc, on click we will call AI LLM to identify if any new variables are to be identified.
+3. We will pass content to AI and see if AI is able to process the document and able to identify alteast 80% variables.
+4. We will provide Information about the new variable identification. These many variables are identified.
+5. Then we will process the template having variable's with name. [variable name]
+6. Below the CTA we will give checkbox to "Update the Master Template".
+7. If user checks the checkbox we will append new variables with old ones, against the template name in Database.
+ 
+#### Journey 1.3:
+1. After the user clicks on "Create Template" (Journey 1.1) or clicks "Fill the form" (Journey 1.2) CTA a new screen will open.
+2. On that screen we have all the dynamic variables, the form has all text inputs, user entered those values with validation checks.
+3. Once user enters all the values he can click on "Apply Data".
+4. Open the preview in the docs & edit if user wants.
+5. Save each and every variable in database.
+
+## Expectations:
+1. Focus on drafting thing only, nothing else.
+2. User friendly editing screens and variable injection in template after form/table is filled.

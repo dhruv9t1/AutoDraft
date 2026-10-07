@@ -1,0 +1,23 @@
+{
+  "metric": true,
+  "fields": [
+    {
+      "semanticKey": "case.number",
+      "sourceText": "CC-508/2026",
+      "replaceable": true
+    },
+    {
+      "semanticKey": "party.complainant",
+      "sourceText": "Kothari Paper Corporation",
+      "replaceable": true
+    },
+    {
+      "semanticKey": "party.defendant",
+      "sourceText": "Harsh Packaging",
+      "replaceable": true
+    }
+  ],
+  "mustNotDetect": [
+    "COMPLAINT"
+  ]
+}

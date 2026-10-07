@@ -1,0 +1,172 @@
+{
+  "promptVersion": "v3b",
+  "backendUrl": "http://localhost:3001",
+  "timestamp": "2026-08-07T08:27:43.516Z",
+  "summary": {
+    "verbatim": 9.444444444444445,
+    "noOverlap": 0,
+    "noListMarkers": 0,
+    "noDuplicates": 10,
+    "recall": 2.7777777777777777,
+    "naming": null
+  },
+  "results": [
+    {
+      "fixture": "sample-cheque-bounce",
+      "returned": [
+        {
+          "id": "var_1",
+          "name": "Reference Number",
+          "originalText": "Ref. No. 411/2026",
+          "position": 0,
+          "confidenceScore": null,
+          "currentValue": null
+        },
+        {
+          "id": "var_2",
+          "name": "Notice Date",
+          "originalText": "Date: 12/APR/2026",
+          "position": 19,
+          "confidenceScore": null,
+          "currentValue": null
+        },
+        {
+          "id": "var_3",
+          "name": "Accused Name",
+          "originalText": "To,\nMr. SOMISETTI VENKATA TIRUMALA KONDAIAH",
+          "position": 38,
+          "confidenceScore": null,
+          "currentValue": null
+        },
+        {
+          "id": "var_5",
+          "name": "Accused District",
+          "originalText": "DISTRICT : KHAMMAM",
+          "position": 157,
+          "confidenceScore": null,
+          "currentValue": null
+        },
+        {
+          "id": "var_6",
+          "name": "Accused PIN Code",
+          "originalText": "PIN : 507301",
+          "position": 177,
+          "confidenceScore": null,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Cheque Number",
+          "originalText": "507301",
+          "position": 183,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": "var_8",
+          "name": "Complainant GSTIN/UIN",
+          "originalText": "[1]",
+          "position": 192,
+          "confidenceScore": null,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "GSTIN",
+          "originalText": "36DQSPK7529R1ZN",
+          "position": 241,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": "var_7",
+          "name": "Complainant Firm Name",
+          "originalText": "[2]",
+          "position": 258,
+          "confidenceScore": null,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Cheque Number 2",
+          "originalText": "Cheque No. 000129",
+          "position": 262,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": "var_10",
+          "name": "Cheque Amount",
+          "originalText": "dated 30/03/2026 for Rs. 1,73,004=00 drawn on CITY UNION BANK LTD, AMALAPURAM Branch",
+          "position": 280,
+          "confidenceScore": null,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Cheque Date",
+          "originalText": "30/03/2026",
+          "position": 286,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": "var_11",
+          "name": "Cheque Return Status",
+          "originalText": "FUNDS INSUFFICIENT",
+          "position": 397,
+          "confidenceScore": null,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Section / Act Reference",
+          "originalText": "Section 138 of The Negotiable Instruments Act, 1881",
+          "position": 432,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "PIN Code 2",
+          "originalText": "380001",
+          "position": 598,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "GSTIN 2",
+          "originalText": "24AECFS7256N1Z4",
+          "position": 623,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": null,
+          "name": "Date 2",
+          "originalText": "06/02/2026",
+          "position": 671,
+          "confidenceScore": 1,
+          "currentValue": null
+        },
+        {
+          "id": "var_4",
+          "name": "Accused Firm Name",
+          "originalText": "Proprietor of 'JAI SRI LAKSHMI COLLECTION'",
+          "position": -1,
+          "confidenceScore": null,
+          "currentValue": null
+        }
+      ],
+      "code": {
+        "verbatim": 9.444444444444445,
+        "noOverlap": 0,
+        "noListMarkers": 0,
+        "noDuplicates": 10,
+        "recall": 2.7777777777777777
+      },
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "fields": [],
+  "mustNotDetect": [
+    "TERMS AND CONDITIONS"
+  ],
+  "metric": false
+}

@@ -1,0 +1,18 @@
+{
+  "fields": [
+    {
+      "semanticKey": "cheque.number",
+      "sourceText": "000052",
+      "replaceable": true
+    },
+    {
+      "semanticKey": "cheque.date",
+      "sourceText": "13/11/2025",
+      "replaceable": true
+    }
+  ],
+  "mustNotDetect": [
+    "IN THE COURT OF THE CIVIL JUDGE"
+  ],
+  "metric": false
+}

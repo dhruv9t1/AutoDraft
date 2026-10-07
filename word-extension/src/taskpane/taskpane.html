@@ -1,0 +1,66 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license. -->
+<!-- See LICENSE in the project root for license information -->
+
+<!doctype html>
+<html lang="en" data-framework="typescript">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoDraft</title>
+    <script>
+        window.__autodraftBoot = { inlineScriptRan: false };
+        window.addEventListener("error", function (event) {
+            var status = document.getElementById("autodraft-status");
+            if (!status) return;
+            var target = event.target;
+            var source = target && (target.src || target.href);
+            status.textContent = source
+                ? "AutoDraft could not load " + source.split("/").pop() + ". Restart the dev server and reopen the task pane."
+                : "AutoDraft JavaScript failed: " + (event.message || "unknown error");
+        }, true);
+        window.addEventListener("unhandledrejection", function (event) {
+            var status = document.getElementById("autodraft-status");
+            if (status) status.textContent = "AutoDraft startup failed: " + (event.reason && event.reason.message ? event.reason.message : String(event.reason || "unknown error"));
+        });
+    </script>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+
+<body style="width: 100%; height: 100%; margin: 0; padding: 0;">
+    <div id="container">
+        <div style="padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #242424; background: #ffffff; min-height: 100vh;">
+            <h2 style="margin: 0 0 8px; font-size: 20px;">Loading AutoDraft</h2>
+            <p id="autodraft-status" style="margin: 0; line-height: 1.4;">The task pane loaded. Waiting for Microsoft Word and the AutoDraft app bundle.</p>
+        </div>
+    </div>
+    <script>
+        window.__autodraftBoot.inlineScriptRan = true;
+        document.getElementById("autodraft-status").textContent = "Word can run task pane scripts. Loading the AutoDraft app bundle.";
+    </script>
+
+    <!-- 
+        Fluent UI React v. 9 uses modern JavaScript syntax that is not supported in
+        Trident (Internet Explorer) or EdgeHTML (Edge Legacy), so this add-in won't
+        work in Office versions that use these webviews. The script below makes the 
+        following div display when an unsupported webview is in use, and hides the 
+        React container div. 
+    -->
+    <div id="tridentmessage" style="display: none; padding: 10;">
+        This add-in will not run in your version of Office. Please upgrade either to perpetual Office 2021 (or later) 
+        or to a Microsoft 365 account.
+    </div>
+    <script>
+        if ((navigator.userAgent.indexOf("Trident") !== -1) || (navigator.userAgent.indexOf("Edge") !== -1)) {
+            var tridentMessage = document.getElementById("tridentmessage");
+            var normalContainer = document.getElementById("container");
+            tridentMessage.style.display = "block";
+            normalContainer.style.display = "none";
+        } 
+    </script>
+</body>
+
+</html>

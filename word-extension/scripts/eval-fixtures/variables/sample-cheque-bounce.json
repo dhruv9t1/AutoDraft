@@ -1,0 +1,24 @@
+{
+  "name": "sample-cheque-bounce",
+  "document": "Ref. No. 411/2026  Date: 12/APR/2026\n\nTo,\nMr. SOMISETTI VENKATA TIRUMALA KONDAIAH, Proprietor of \"JAI SRI LAKSHMI COLLECTION\",\n8-1165, BCM ROAD, ASWARAOPET, DISTRICT : KHAMMAM, PIN : 507301.\n\n[1] Sri Hanuman & Cloth Showroom (GSTIN/UIN No.: 36DQSPK7529R1ZN)\n[2] Cheque No. 000129 dated 30/03/2026 for Rs. 1,73,004=00 drawn on CITY UNION BANK LTD, AMALAPURAM Branch, returned with the endorsement \"FUNDS INSUFFICIENT\".\n\nNotice under Section 138 of The Negotiable Instruments Act, 1881.\n\nFrom: M/s. SWAKAR EXPORTS, # 2, G. Floor, VaibhavLaxmi Complex, Opp. Old Prakash Cinema, GheeKanta, AHMEDABAD : 380001 (GUJARAT). GSTIN: 24AECFS7256N1Z4.\n\nPlace : Ahmedabad      Date : 06/02/2026",
+  "expected": [
+    { "name": "Reference Number", "originalText": "411/2026" },
+    { "name": "Notice Date", "originalText": "12/APR/2026" },
+    { "name": "Accused Proprietor Name", "originalText": "Mr. SOMISETTI VENKATA TIRUMALA KONDAIAH" },
+    { "name": "Accused Firm Name", "originalText": "JAI SRI LAKSHMI COLLECTION" },
+    { "name": "Accused Firm Address", "originalText": "8-1165, BCM ROAD, ASWARAOPET, DISTRICT : KHAMMAM, PIN : 507301" },
+    { "name": "Accused Trade Name", "originalText": "Sri Hanuman & Cloth Showroom" },
+    { "name": "Accused GSTIN", "originalText": "36DQSPK7529R1ZN" },
+    { "name": "Cheque Number", "originalText": "000129" },
+    { "name": "Cheque Date", "originalText": "30/03/2026" },
+    { "name": "Cheque Amount Figures", "originalText": "1,73,004=00" },
+    { "name": "Cheque Bank Name", "originalText": "CITY UNION BANK LTD" },
+    { "name": "Cheque Bank Branch", "originalText": "AMALAPURAM" },
+    { "name": "Legal Section Reference", "originalText": "Section 138 of The Negotiable Instruments Act, 1881" },
+    { "name": "Complainant Firm Name", "originalText": "SWAKAR EXPORTS" },
+    { "name": "Complainant Firm Address", "originalText": "# 2, G. Floor, VaibhavLaxmi Complex, Opp. Old Prakash Cinema, GheeKanta, AHMEDABAD : 380001 (GUJARAT)" },
+    { "name": "Complainant GSTIN", "originalText": "24AECFS7256N1Z4" },
+    { "name": "Place of Signing", "originalText": "Ahmedabad" },
+    { "name": "Date of Signing", "originalText": "06/02/2026" }
+  ]
+}

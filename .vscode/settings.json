@@ -1,0 +1,7 @@
+{
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll": "explicit"
+    },
+    "postman.settings.dotenv-detection-notification-visibility": false
+  }

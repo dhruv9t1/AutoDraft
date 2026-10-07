@@ -1,0 +1,18 @@
+{
+  "metric": true,
+  "fields": [
+    {
+      "semanticKey": "cheque.number",
+      "sourceText": "136190",
+      "replaceable": true
+    },
+    {
+      "semanticKey": "cheque.date",
+      "sourceText": "30-03-2026",
+      "replaceable": true
+    }
+  ],
+  "mustNotDetect": [
+    "પક્ષકારનું નામ સ્થિર લખાણ છે."
+  ]
+}

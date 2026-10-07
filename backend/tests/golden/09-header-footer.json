@@ -1,0 +1,14 @@
+{
+  "metric": true,
+  "fields": [
+    {
+      "semanticKey": "reference.number",
+      "sourceText": "REF-2026-77",
+      "replaceable": true
+    }
+  ],
+  "mustNotDetect": [
+    "HEADER: CLIENT COPY",
+    "Footer: Page 1"
+  ]
+}

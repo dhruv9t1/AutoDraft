@@ -1,0 +1,3 @@
+Cheque No.: 000052
+Cheque Date: 13/11/2025
+This fixture represents text split across formatting runs in Word.

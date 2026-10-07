@@ -1,0 +1,25 @@
+{
+  "executedAt": "2026-10-05T00:00:00Z",
+  "environments": {
+    "windows": "Microsoft Word version/build + Windows version",
+    "mac": "Microsoft Word version/build + macOS version"
+  },
+  "gates": {
+    "windowsManifestLoad": false,
+    "macManifestLoad": false,
+    "officeSso": false,
+    "customXml": false,
+    "compressedDocumentCapture": false,
+    "createDocument": false,
+    "bindingInsertion": false,
+    "repeatedOccurrenceBinding": false,
+    "exactRollback": false,
+    "eventChangeDelete": false,
+    "newBindingEvent": false,
+    "reconciliationCorruption": false,
+    "comments": false,
+    "trackChanges": false,
+    "generatedDocumentOpen": false
+  },
+  "releaseSha256": "REPLACE_WITH_EXACT_PRODUCTION_CANDIDATE_SHA256"
+}

@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+      "fluent-ui": {
+        "command": "npx",
+        "args": ["mcp-fluent-ui"]
+      }
+    }
+  }

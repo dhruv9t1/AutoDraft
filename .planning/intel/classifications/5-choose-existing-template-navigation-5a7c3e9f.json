@@ -1,0 +1,25 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/stories/5-choose-existing-template-navigation.md",
+  "type": "SPEC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Story 1.5: Choose Existing Template Navigation",
+  "summary": "User story spec for adding a 'Choose Existing Template' button that navigates from template creation to Journey 1.3 (Fill Form with Variables) at any time.",
+  "scope": [
+    "Choose Existing Template button",
+    "Template creation form navigation",
+    "Journey 1.3 routing",
+    "TemplateCreationForm.tsx",
+    "App.tsx routing"
+  ],
+  "cross_refs": [
+    "docs/Journey_1.1_Create_New_Template_PRD.md#FR009",
+    "docs/business-docs/01-project-overview.mdc#Journey-1.1",
+    "docs/business-docs/01-project-overview.mdc#Journey-1.3",
+    "word-extension/src/taskpane/components/TemplateCreationForm.tsx",
+    "word-extension/src/taskpane/components/App.tsx"
+  ],
+  "locked": false,
+  "precedence": null,
+  "notes": "Manifest-declared SPEC. Document is a user story with acceptance criteria (PRD-like signals) but classified per manifest authority."
+}

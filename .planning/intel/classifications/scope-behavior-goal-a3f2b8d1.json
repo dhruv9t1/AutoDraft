@@ -1,0 +1,24 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/business-docs/Scope, behavior & goal.md",
+  "type": "PRD",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Scope, behavior & goal",
+  "summary": "Q&A-style product requirements covering scope, UI behavior, default states, integration logic, edge cases, and business context for the lawyer template/variable identification feature.",
+  "scope": [
+    "template selection",
+    "variable identification",
+    "AI-assisted drafting",
+    "template dropdown UI",
+    "variables form/table view",
+    "Identify Variables action",
+    "Fill the form action",
+    "template merge behavior",
+    "error/fallback handling",
+    "user adoption goals"
+  ],
+  "cross_refs": [],
+  "locked": false,
+  "precedence": null,
+  "notes": ""
+}

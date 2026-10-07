@@ -1,0 +1,8 @@
+{
+  "metric": true,
+  "fields": [],
+  "mustNotDetect": [
+    "GENERAL TERMS",
+    "The parties shall cooperate in good faith."
+  ]
+}

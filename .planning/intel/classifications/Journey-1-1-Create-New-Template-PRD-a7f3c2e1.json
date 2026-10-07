@@ -1,0 +1,30 @@
+{
+  "source_path": "/Users/sandeepmehta/Documents/GitHub/word-addin/docs/Journey_1.1_Create_New_Template_PRD.md",
+  "type": "PRD",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "Product Requirements Document - Journey 1.1: Create New Template",
+  "summary": "PRD for Journey 1.1 enabling lawyers to create a new legal document template from a Word document with AI-detected variables.",
+  "scope": [
+    "Word Add-in",
+    "template creation",
+    "template metadata",
+    "AI variable detection",
+    "variable confirmation",
+    "template database persistence",
+    "Journey 1.1"
+  ],
+  "cross_refs": [
+    "docs/business-docs/01-project-overview.mdc",
+    "docs/clarifying_questions_answers.md",
+    "docs/business-docs/MSWord-screenshot.png",
+    "backend/src/handlers.rs",
+    "backend/src/ollama.rs",
+    "word-extension/src/services/aiVariableService.ts",
+    "word-extension/src/services/documentExtraction.ts",
+    "backend/migrations/20250127000001_create_variables_table.sql"
+  ],
+  "locked": false,
+  "precedence": null,
+  "notes": ""
+}
