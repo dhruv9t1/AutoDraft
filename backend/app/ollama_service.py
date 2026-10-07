@@ -105,6 +105,10 @@ class OllamaService:
             "model": settings.ollama_model,
             "error": "Not checked yet",
         }
+        # Learned once the runner is OOM-killed: subsequent calls start at the
+        # largest context this host has served instead of re-crashing at the
+        # configured value every request.
+        self._ctx_cap = settings.ollama_num_ctx
         self.jev = JevDecisionProvider(
             endpoint=settings.jev_api_url,
             api_key=settings.jev_api_key if settings.system1_provider.strip().lower() == "jev" else "",
@@ -353,7 +357,10 @@ If none return {{"variables":[]}}."""
             "top_k": self.settings.ollama_top_k,
             "seed": self.settings.ollama_seed,
             "format": schema,
-            "options": {"num_predict": 8192, "num_ctx": 32768},
+            "options": {
+                "num_predict": self.settings.ollama_num_predict,
+                "num_ctx": self._ctx_cap,
+            },
         }
         think = self.settings.ollama_think_level.lower()
         if think in {"on", "true"}:
@@ -370,6 +377,18 @@ If none return {{"variables":[]}}."""
                     raise AIModelUnavailable(
                         f"Ollama could not load model '{body['model']}'. Run: ollama pull {body['model']}"
                     )
+                if resp.status_code == 500 and self._is_runner_crash(resp):
+                    # Model runner was killed (usually OOM from a large KV
+                    # cache). Halve the context and retry before failing.
+                    current_ctx = int(body["options"].get("num_ctx") or self._ctx_cap)
+                    reduced_ctx = max(self.settings.ollama_num_ctx_min, current_ctx // 2)
+                    if reduced_ctx < current_ctx:
+                        body["options"]["num_ctx"] = reduced_ctx
+                        self._ctx_cap = reduced_ctx
+                        last = AIProviderUnavailable(
+                            f"Ollama model runner crashed at num_ctx={current_ctx}; retrying with num_ctx={reduced_ctx}."
+                        )
+                        continue
                 resp.raise_for_status()
                 raw = resp.json()
                 content = (
@@ -402,6 +421,16 @@ If none return {{"variables":[]}}."""
         if isinstance(last, Exception):
             raise last
         raise AIProviderUnavailable("AI request failed after retries.")
+
+    @staticmethod
+    def _is_runner_crash(resp: httpx.Response) -> bool:
+        """True when Ollama's model runner died (OOM/abort) instead of answering."""
+        try:
+            text = resp.text.lower()
+        except Exception:
+            return False
+        markers = ("terminated", "killed", "signal:", "llama-server", "out of memory", "oom")
+        return any(m in text for m in markers)
 
     @staticmethod
     def _parse_json_content(content: str) -> dict[str, Any]:
