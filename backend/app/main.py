@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from .runtime import settings, log, db, ai, ocr, runtime_state, authenticated_context, binary_object_store
 from .db import Database, clear_request_organization, ensure_local_default_identity, reset_request_organization, run_migrations
-from .api.health import build_health_router
+from .api.health import build_health_router, build_status_router
 from .api.documents import router as documents_router
 from .api.templates import router as templates_router
 from .api.ocr import router as ocr_router
@@ -26,7 +26,6 @@ from .api.integrations import router as integrations_router
 from .errors import AutoDraftError
 from .security import RequestBodyLimitMiddleware, SecurityHeadersMiddleware, PostgresRateLimiter, client_ip, install_sensitive_access_log_filter, normalize_correlation_id, redact_sensitive_path
 from .auth import validate_security_configuration
-from .ocr_service import dependency_status
 from .runtime_worker import DurableRuntimeWorker
 from .quarantine_cleanup import IntakeQuarantineJanitor
 logging.basicConfig(level=getattr(logging, settings.log_level.upper(), logging.INFO), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -116,6 +115,7 @@ app.include_router(workflows_router)
 app.include_router(automation_router)
 app.include_router(authentication_router)
 app.include_router(integrations_router)
+app.include_router(build_status_router(db, ai, settings))
 @app.exception_handler(AutoDraftError)
 async def autodraft_error_handler(request: Request, exc: AutoDraftError):
     request_id = normalize_correlation_id(getattr(request.state, "request_id", None) or request.headers.get("X-Correlation-ID"), fallback=uuid.uuid4().hex)
@@ -174,19 +174,3 @@ async def request_observability(request:Request,call_next):
         return response
     finally:
         reset_request_organization(tenant_token)
-@app.get("/")
-async def root(): return {"name":"AutoDraft Backend","runtime":"Python/FastAPI","version":"1.3.0"}
-@app.get("/health")
-async def health():
-    database_ok=False
-    try:
-        async with db.raw_pool().acquire() as conn:
-            database_ok=bool(await conn.fetchval("SELECT 1"))
-    except Exception:
-        database_ok=False
-    try:
-        state=await dependency_status(tuple(settings.ocr_language_list))
-        ocr_payload={"ready":state.ready,"ocrmypdf":state.ocrmypdf,"tesseract":state.tesseract,"missingLanguages":list(state.missing_languages)}
-    except Exception as exc:
-        ocr_payload={"ready":False,"error":str(exc)}
-    return {"status":"ok" if database_ok else "degraded","runtime":"python","database":{"ready":database_ok},"ollama":ai.readiness,"ocr":ocr_payload}
