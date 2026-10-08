@@ -35,3 +35,4 @@ backend/tests/__pycache__/
 backend/.pytest_cache/
 backend/*.egg-info/
 *.pyc
+backend/.runtime-objects/
